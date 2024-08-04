@@ -1,51 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>I am not a simple harmonic oscillator</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
     <style>
-        body {
-            background-color: lightgray;
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 20px;
-            text-align: center;
-        }
-        img {
-            width: 100%;
-            cursor: pointer;
-        }
-        .text {
-            font-size: 1.2em;
-            color: darkgray
-        }
-        a {
-            color: inherit;
-        }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        background-color: lightgray;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+      }
+      .container {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      img {
+        width: 100%;
+        cursor: pointer;
+      }
+      .text {
+        font-size: 1.2em;
+        color: #8c8c8c;
+      }
+      a {
+        color: inherit;
+      }
+      .mb-4 {
+        margin-bottom: 1rem;
+      }
+      .contact {
+        align-self: flex-end; /* Align this element to the right */
+        text-align: right;
+        width: 100%;
+      }
+      .contact p {
+        font-size: 0.8em;
+        margin: 0;
+        color: darkgray;
+      }
+      .flex {
+        display: flex;
+      }
+      .flex-col {
+        flex-direction: column;
+      }
+      .items-center {
+        align-items: center;
+      }
+      .flex-1 {
+        flex: 1;
+      }
+      #oscillatorCanvas {
+        flex: 1 1 auto;
+      }
+      .button {
+        width: fit-content;
+        background-color: transparent;
+        border: none;
+        color: darkgray;
+        cursor: pointer;
+        text-decoration: underline;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <img src="seancarroll.png" alt="Sean Carroll" 
-             onclick="window.location='https://www.youtube.com/watch?v=9AoRxtYZrZo';">
-        <p class-"text">
-          Inspired by Sean Carrol and Curt Jaimungal.
-        </p>
-        <p>
-          made by Vladislav Sorokin and GPT-4
-        </p>
-        <p>
-          contact me at <a href="mailto:vladislavsorokin@gmail.com">sorokinvj@gmail.com</a>
-        </p>
+      <p class="text mb-4">Inspired by Sean Carrol and Curt Jaimungal.</p>
+      <a href="https://www.youtube.com/watch?v=9AoRxtYZrZo">
+        <img src="seancarroll.png" alt="Sean Carroll" />
+      </a>
     </div>
-</body>
+    <div class="flex flex-col items-center">
+      <button id="startButton" class="button">Oscillate</button>
+      <canvas id="oscillatorCanvas"></canvas>
+    </div>
+    <div class="container contact">
+      <p>made by Vladislav Sorokin and GPT-4</p>
+      <p>
+        contact me at
+        <a href="mailto:vladislavsorokin@gmail.com">sorokinvj@gmail.com</a>
+      </p>
+    </div>
+  </body>
+  <script src="harmonic.js" defer></script>
 </html>
